@@ -1,4 +1,4 @@
-package com.cadebe.springboot.jms.model;
+package dev.cadebe.springboot.jms.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

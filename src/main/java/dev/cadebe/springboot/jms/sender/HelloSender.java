@@ -1,18 +1,16 @@
-package com.cadebe.springboot.jms.sender;
+package dev.cadebe.springboot.jms.sender;
 
-import com.cadebe.springboot.jms.config.JmsConfig;
-import com.cadebe.springboot.jms.model.HelloWorldMessage;
+import dev.cadebe.springboot.jms.config.JmsConfig;
+import dev.cadebe.springboot.jms.model.HelloWorldMessage;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.core.MessageCreator;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
-import javax.jms.Session;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -44,7 +42,7 @@ public class HelloSender {
         Message receivedMsg = jmsTemplate.sendAndReceive(JmsConfig.MY_SEND_RECEIVE_QUEUE, session -> {
             try {
                 Message helloMessage = session.createTextMessage(objectMapper.writeValueAsString(message));
-                helloMessage.setStringProperty("_type", "com.cadebe.springboot.jms.model.HelloWorldMessage");
+                helloMessage.setStringProperty("_type", "dev.cadebe.springboot.jms.model.HelloWorldMessage");
 
                 System.out.println("Sending hello");
                 return helloMessage;

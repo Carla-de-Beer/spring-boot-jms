@@ -1,4 +1,4 @@
-package com.cadebe.springboot.jms.config;
+package dev.cadebe.springboot.jms.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

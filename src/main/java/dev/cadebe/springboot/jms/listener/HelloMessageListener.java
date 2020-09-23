@@ -1,7 +1,7 @@
-package com.cadebe.springboot.jms.listener;
+package dev.cadebe.springboot.jms.listener;
 
-import com.cadebe.springboot.jms.config.JmsConfig;
-import com.cadebe.springboot.jms.model.HelloWorldMessage;
+import dev.cadebe.springboot.jms.config.JmsConfig;
+import dev.cadebe.springboot.jms.model.HelloWorldMessage;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
